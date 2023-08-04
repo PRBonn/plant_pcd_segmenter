@@ -18,6 +18,10 @@ in Point Clouds Obtained Under Real Field Conditions". The paper can be download
 ## Test
 - Execute ```make test_instances``` to evaluate the segmentation network
 
+## Data
+This approach has been tested on sugar beet and tree point clouds and has shown good performance.
+The data used in our paper is not publicly available at the moment but will be in the future.
+
 # Citation
 
 If you use this repo, please cite us :
