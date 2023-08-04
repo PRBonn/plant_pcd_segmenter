@@ -47,7 +47,6 @@ def main(config, paths, weights, checkpoint):
     cfg["paths"] = yaml.safe_load(open(paths))["confid_paths"]
     cfg['paths']['data_path'] = os.path.join(cfg["paths"]["log_path"], cfg["experiment"]["id"], 'confid_data')
     
-    cfg["confid_model"]["loss_n_samples"] = cfg["data"]["loss_n_samples"]
     cfg["confid_model"]["eval_n_samples"] = cfg["data"]["eval_n_samples"]
     
     if checkpoint == 'None':

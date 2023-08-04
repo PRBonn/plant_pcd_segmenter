@@ -54,7 +54,6 @@ def main(checkpoint, config, paths, embeddings, confid):
     # enforce batch_size=1
     cfg["data"]["batch_size_embed"] = 1
     cfg["data"]["eval_n_samples"] = cfg["data"]["sample_size"]
-    cfg["offset_model"]["loss_n_samples"] = cfg["data"]["loss_n_samples"]
     cfg["offset_model"]["eval_n_samples"] = cfg["data"]["eval_n_samples"]
     
 

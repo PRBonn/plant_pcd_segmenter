@@ -13,7 +13,7 @@ in Point Clouds Obtained Under Real Field Conditions". The paper can be download
 - Get a coffee and wait
 
 ## Train
-- Execute ```make train_instances``` to train the segmentation network
+- To train the leaf segmentation model with the provided config file run ```make train_instances CONFIG=config/leaf_segmentation.yaml```
 
 ## Test
 - Execute ```make test_instances``` to evaluate the segmentation network

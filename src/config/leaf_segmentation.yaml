@@ -1,15 +1,12 @@
 experiment:
-    id: leaves_ss40000_deconv
+    id: leaf_segmentation
 ##Data
 data:
-    # f_dim: 100
     resolution: 0.001
     sample_size: 40000
     batch_size_embed: 1
     batch_size_confid: 4
     accumulate_grad: 1
-    # min_leaf_points: 60
-    loss_n_samples: 5000
     eval_n_samples: 30000
     min_leaf_point_ratio_inference: 0.01
     min_samples_hdbscan_ratio: 1.0
@@ -21,14 +18,13 @@ data:
     confid_filter_thres: 0.70
     only_labeled: False
     confid_data_samples: 100000
-    # generate_confid_dataset: False
 
 ##Training
 train:
     n_gpus: [0,]
     num_workers: 15
-    max_epoch: 30000
-    max_embed_steps: 20000000
+    max_epoch: 500
+    max_embed_steps: 10000000
     max_confid_steps: 10000000
     lr_emb: 1e-4
     lr_confid: 1e-4
@@ -49,41 +45,18 @@ offset_model:
     loss: 'offset'
     enable_dropout: False
     grid_sampling_method: 'mean'
-    # enabled: False
-    delta_a: 0.1
-    delta_r: 1.
-    alpha: 1
-    beta: 1.
-    gamma: 0.005
-    # weight_key_loss: 3
-    # error_pred_weight: 0
-    debug_receptive_field: False
     # min_kernel_r: 0.01
     max_kernel_r: 0.08
-    # num_enc_layers: 14
-    # enc_layer_downsample: [0,0,1,0,0,1,0,0,1,0,0,1,0,0]
     num_enc_layers: 9
     enc_layer_downsample: [1,0,1,0,1,0,1,0,0]
-    layer_rotinv: [0,0,0,0,0,0,0,0,0,0,0,0,0]
-    n_downsamplings: 7
+    # n_downsamplings: 7
     min_feat_size: 64
     max_feat_size: 256
-    # input_size: 6
-    output_size: 5
-    max_kp_offset_len: 1000
-    voting_grid_size: 0.01
     conv_r2s_gain: 1.5
-    weight_std_loss: 30
-    target_std: 0.2
-    kp_reg_weight: 0.5
-    softmax_attenuation: 0.9
-    keypoint_types: [0,1,2,3,4]
     kp_enabled: False
-    align_kp: False
     pos_enc: False
 
 confid_model:
-    # enabled: False
     grid_sampling_method: 'mean'
     use_emb_feats: True
     mask_injection: False
@@ -99,10 +72,7 @@ confid_model:
     min_feat_size: 32
     max_feat_size: 128
     conv_r2s_gain: 1.5
-    weight_std_loss: 30
-    align_kp: False
     confid_weight: 1.0
-    pos_enc: False
     final_sigmoid: True
 
 debug:

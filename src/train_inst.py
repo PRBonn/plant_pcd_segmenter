@@ -70,7 +70,6 @@ def main(
     if checkpoint == "None":
         checkpoint = None
     # copy over parameters
-    cfg["offset_model"]["loss_n_samples"] = cfg["data"]["loss_n_samples"]
     cfg["offset_model"]["eval_n_samples"] = cfg["data"]["eval_n_samples"]
     cfg["offset_model"]["sample_size"] = cfg["data"]["sample_size"]
     cfg["offset_model"]["batch_size"] = cfg["data"]["batch_size_embed"]

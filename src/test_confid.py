@@ -44,7 +44,6 @@ def main(checkpoint, config, paths, embeddings, confid):
     # enforce batch_size=1
     cfg["data"]["batch_size_confid"] = 1
     cfg["data"]["eval_n_samples"] = cfg["data"]["sample_size"]
-    cfg["confid_model"]["loss_n_samples"] = cfg["data"]["loss_n_samples"]
     cfg["confid_model"]["eval_n_samples"] = cfg["data"]["eval_n_samples"]
 
     log_name = cfg["experiment"]["id"]

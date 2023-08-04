@@ -24,7 +24,6 @@ class ConfidNet(LightningModule):
         self.best_val_vscore = 0
         self.best_train_vscore = 0
         self.best_val_kp_error = 1e6
-        self.max_kp_offset_len = self.hparams["offset_model"]["max_kp_offset_len"]
         self.optimizer_state = None
 
     def getLoss(self, x: torch.Tensor, y: torch.Tensor):
