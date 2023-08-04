@@ -3,12 +3,12 @@
 This repo contains the code for our publication "High Precision Leaf Instance Segmentation for Phenotyping
 in Point Clouds Obtained Under Real Field Conditions". The paper can be downloaded **[here](https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/marks2023ral.pdf)**.
 
-![](pics/arch.png)
+![](arch.png)
 
 ## Setup
 - Install docker and nvidia-docker2 on your machine
 - Clone this repo to a folder on your pc
-- Edit ```docker-compose.yml``` to set ```/data``` and ```/logs``` paths
+- Edit ```docker-compose.yml``` to set ```/data``` and ```/logs``` paths. ```/data``` contains the dataset and ```/logs``` is the folder where the tensorboard logs will be saved.
 - Execute ```make build```
 - Get a coffee and wait
 
