@@ -1,0 +1,27 @@
+services:
+  pcd_leaf_segmenter:
+    build:
+      context: .
+      ssh: ["default"]
+    runtime: nvidia
+    shm_size: '2gb'
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    image: "pcd_leaf_segmenter"
+    volumes:
+      # Always mount these
+      - /tmp:/home/user/.cache
+      - /tmp:/tmp
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # Local mounts
+      - .:/packages/pcd_leaf_segmenter
+      - /home/elias/workstation_data/datasets:/data
+      - /home/elias/workstation_data/tensorboard_logs:/logs
+
+    environment:
+      - DISPLAY
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [compute,utility,graphics]
