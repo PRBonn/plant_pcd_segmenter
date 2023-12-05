@@ -6,9 +6,9 @@ in Point Clouds Obtained Under Real Field Conditions". The paper can be download
 ![](arch.png)
 
 ## Setup
-- Install docker and nvidia-docker2 on your machine
+- Install docker, docker-compose and nvidia-docker2 on your machine
 - Clone this repo to a folder on your pc
-- Edit ```docker-compose.yml``` to set ```/data``` and ```/logs``` paths. ```/data``` contains the dataset and ```/logs``` is the folder where the tensorboard logs will be saved.
+- Edit ```docker-compose.yml``` to set ```/data``` and ```/logs``` paths. ```/data``` contains the dataset and ```/logs``` is the folder where the tensorboard logs will be saved. Edit the part of the paths before the ':' to make it point to the directories on your machine.
 - Execute ```make build```
 - Get a coffee and wait
 
