@@ -13,7 +13,7 @@ RUN_IN_CONTAINER = docker --context $(MACHINE) compose run -e PLS_CHECKPOINT=$(C
 
 build:
 ifdef MACHINE
-	COMPOSE_DOCKER_CLI_BUILD=1 docker --context $(MACHINE) compose build pcd_leaf_segmenter --ssh ssh-rsa --build-arg USER_ID=$(USER_ID) --build-arg GROUP_ID=$(GROUP_ID)
+	COMPOSE_DOCKER_CLI_BUILD=1 docker --context $(MACHINE) compose build pcd_leaf_segmenter --build-arg USER_ID=$(USER_ID) --build-arg GROUP_ID=$(GROUP_ID)
 else
 	COMPOSE_DOCKER_CLI_BUILD=1 docker compose build pcd_leaf_segmenter --ssh ssh-rsa --build-arg USER_ID=$(USER_ID) --build-arg GROUP_ID=$(GROUP_ID)
 endif

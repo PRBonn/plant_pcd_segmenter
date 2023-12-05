@@ -15,8 +15,8 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       # Local mounts
       - .:/packages/pcd_leaf_segmenter
-      - /home/elias/workstation_data/datasets:/data
-      - /home/elias/workstation_data/tensorboard_logs:/logs
+      - /home/elias/test/data:/data
+      - /home/elias/test/logs:/logs
 
     environment:
       - DISPLAY

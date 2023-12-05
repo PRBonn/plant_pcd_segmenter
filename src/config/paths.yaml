@@ -1,5 +1,5 @@
 patch_paths:
-    data_path: "/data/SBUB3D_patches_old"
-    overfit_path: "/data/SBUB3D_patches_overfit"
+    data_path: "/data"
+    overfit_path: "/data"
     log_path: "/logs/patches"
 
